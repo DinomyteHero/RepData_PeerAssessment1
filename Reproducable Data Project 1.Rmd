@@ -6,7 +6,7 @@ output: html_document
 ---
 
 
-## Must process the data and transform it as I see fit firstly
+## Loading and preprocessing the data
 ```{r, echo=TRUE}
 library(lubridate)
 library(ggplot2)
