@@ -1,11 +1,10 @@
 ---
-title: "Rep Data Project 1"
+title: "Reproducible Research: Peer Assessment 1"
 author: "Louis"
 date: "8/18/2020"
 output: html_document
 ---
 
-## My Course project
 
 ## Must process the data and transform it as I see fit firstly
 ```{r, echo=TRUE}
@@ -16,7 +15,7 @@ data <- read.csv("activity.csv")
 data$date <- ymd(data$date)
 data$steps <- as.numeric(data$steps)
 ```
-## Part 1
+## Part 1 : What is mean total number of steps taken per day?
 
 1. Find the sum of number of total steps taken per day.
 ```{r, echo = TRUE}
@@ -38,7 +37,7 @@ sum_median <- median(the_sum$steps)
 print(sum_median)
 ```
 
-## Part 2
+## Part 2 : What is the average daily activity pattern?
 
 1. Mean of daily total steps taken
 ```{r, echo = TRUE}
@@ -54,7 +53,7 @@ with(total_mean, plot(interval, steps, type = "l", main = "Average daily number 
 ```{r,echo=TRUE}
 total_mean[which.max(total_mean$steps),1]
 ```
-## Part 3
+## Part 3 : Imputing missing values
 
 1. Sum of data with NA
 ```{r,echo=TRUE}
@@ -92,7 +91,7 @@ median(the_sum3$steps)
 Seems like both the mean and median are equal to one another now
 
 
-## Part 4
+## Part 4 : Are there differences in activity patterns between weekdays and weekends?
 
 1. Made another identical dataset to the original as to ensure that any changes made do not affect the original.
 ```{r,echo=TRUE}
